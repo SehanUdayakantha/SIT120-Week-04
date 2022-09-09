@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script> 
+    </head>
+    <body>
+        <div id="app">
+            {{ text }}
+            <p v-if="text == 'Hello World!'">Good job!</p>
+            <p v-else="text =! 'Hello World!'">Try Again!</p>
+            <div class="round" v-show="show">Visible</div>
+            <div class="round" v-show="seen">Visible</div>
+            <li v-for="data in datalist">{{ data.text }}</li>
+            <div class="boxcontainer">
+            <div class="box">Box</div>
+            <div class="box">Box</div>
+           </div>
+        </div>
+        <script src="Week04.js"></script>
+        <style>
+            .round{
+                border-radius: 50px;
+                background-color: aqua;
+            }
+            .box{
+                background-color: blue;
+                height: 500px;
+                width: 100%;
+                border-color: black;
+                border-style:double;
+                
+            }
+            .boxcontainer{
+                display:flex;
+                flex-direction: row;
+                flex: 50%;
+            }
+            @media (max-width: 600px){
+                .boxcontainer{
+                display:flex;
+                flex-direction: column;
+                flex: 50%;
+               } 
+            }
+        </style> 
+    </body>
+</html>
